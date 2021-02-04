@@ -6,7 +6,7 @@ import json
 
 def where(keyword):
 
-    headers: dict = {'Authorization': 'KakaoAK 621d676082f6705f0a49afcac59d2762'} #secret key  
+    headers: dict = {'Authorization': 'KakaoAK ... '} #secret key  
     keyword: dict = {'query': keyword}
     req = requests.get('https://dapi.kakao.com/v2/local/search/keyword.json?', headers=headers,params=keyword)
 
