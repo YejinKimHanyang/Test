@@ -1,27 +1,20 @@
-import requests
-import json
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Kakao 지도 시작하기</title>
+</head>
+<body>
+	<div id="map" style="width:500px;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f588e7ace894f7c5c1fa434cd634d961"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
 
-#어느 authorization? 카카오 REST API?
-#def Get_location(keyword):
-
-def where(keyword):
-
-    headers: dict = {'Authorization': 'KakaoAK ... '} #secret key  
-    keyword: dict = {'query': keyword}
-    req = requests.get('https://dapi.kakao.com/v2/local/search/keyword.json?', headers=headers,params=keyword)
-
-    info: dict= json.loads(req.text)
-    #print(info)
-
-#여기에서 lat 이랑 long 을 string 으로 받으면 안된다.  list 안에 dictionary 가 있기 때문. 
-    location: tuple = (info['documents'][0]['x'], info['documents'][0]['y'])
-    print("The geolocation of the place is:")
-    print(location)
-
-#is this module being run directly by python or is it being imported?
-if __name__=="__main__":
-    #get input from the user
-    keyword = input("What is the name of the location?")
-
-    where(keyword)
-    #send keyword and run where()
+		var map = new kakao.maps.Map(container, options);
+	</script>
+</body>
+</html>
