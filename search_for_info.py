@@ -1,3 +1,4 @@
+#sweettracker 사용하기 
 import requests
 import json
 
@@ -13,7 +14,7 @@ api_params: dict = {
 }
 
 def get_t_code(name: str, company: dict) -> str:
-    for x in company['Company']:
+    for x in company['Company']: #여기에서 'Company' 는 어디에서 가지고 오는 것인가? companylist 에는 companies 밖에 없는데?
         if x['Name']==name:
             return x['Code']
 
